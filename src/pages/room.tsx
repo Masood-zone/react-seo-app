@@ -3,26 +3,30 @@ import SEO from "../components/seo/seo";
 
 function Room() {
   const { id } = useParams<{ id: string }>();
-  const rooms = {
-    1: {
+  const rooms = [
+    {
+      id: 1,
       name: "Living Room",
       description: "A cozy and stylish living room design.",
     },
-    2: {
+    {
+      id: 2,
       name: "Bedroom",
       description: "A peaceful and relaxing bedroom setup.",
     },
-    3: {
+    {
+      id: 3,
       name: "Kitchen",
       description: "A modern and functional kitchen layout.",
     },
-    4: {
+    {
+      id: 4,
       name: "Bathroom",
       description: "An elegant and spa-like bathroom design.",
     },
-  };
+  ];
 
-  const room = rooms[id] || {
+  const room = rooms[Number(id)] || {
     name: "Unknown Room",
     description: "Room not found.",
   };
